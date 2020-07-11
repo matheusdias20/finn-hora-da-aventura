@@ -1,0 +1,171 @@
+html, body{
+    height:100%;
+    overflow-y: hidden
+}
+
+body{
+    background-color: #2cb3f2;
+}
+
+.corpo{
+    width: 456px;
+    height: 350px;
+
+    position: relative;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+/* ROSTO */
+
+.face{
+    width: 450px;
+    height: 320px;
+    border: 3px solid black;
+    border-radius: 50%; 
+    position: relative; /* Já que a face é o elemento pai, então a position é RELATIVE*/
+    background: #f8ddce;
+
+    display: flex; /* Deixa os elementos filhos flexivel*/
+    justify-content: space-around;
+
+}
+
+
+
+/* OLHOS */
+
+.eye{
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 70px;
+    z-index: 1; /* Fica acima da face */
+    background:black;
+    overflow: hidden;
+    
+}
+
+
+.eye::after{
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+
+    
+    top: -24px;
+    left: 10px; 
+    animation: shake .1s infinite ease-in-out alternate;    
+}
+
+.eye::before{
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+
+ 
+    bottom: -20px;
+    right: 0px;
+    animation: shake .1s infinite ease-in-out alternate;        
+}
+
+
+/* BOCA */
+
+.mouth{
+    width: 180px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid black;
+    position: absolute;
+    bottom:50px;
+    left: 135px;
+
+    overflow: hidden;
+}
+
+/* DENTES */
+
+.tooth{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+
+}
+
+.t-left{
+    left: 30px;
+    top: -10px;
+}
+
+.t-center{
+    left: 75px;
+    top: -13px;
+}
+
+
+.t-right{
+    right: 30px;
+    top: -10px;
+}
+
+
+/* LÍNGUA */
+
+.tongue{
+    width: 60px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ea6e74;
+    position: absolute;
+    bottom: -20px;
+    left: 60px;
+}
+
+
+/* BOCHECHA */
+
+.cheek{
+    width: 30px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f8ddce;
+    position: absolute;
+    bottom: 50px;
+    
+}
+
+.c-left{
+    border-right: 1px solid black;
+    left: 125px;
+    transform: rotate(10deg);
+    box-shadow: inset -5px 1px 2px #ddc2b0;
+  }
+
+
+.c-right{
+    border-left: 1px solid black;
+    right: 125px;
+    transform: rotate(-10deg);
+    box-shadow: inset 5px 1px 2px #ddc2b0;
+}
+
+
+@keyframes shake{
+    0% {transform: translateX(-1px)}
+    100%{transform: translateX(1px)}
+
+}
+
